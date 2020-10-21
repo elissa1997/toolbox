@@ -1,19 +1,17 @@
-# toolbox
+# 目前已开发的小工具
 
-## Project setup
-```
-npm install
-```
+- [x] 服务器监控 ---`server.vue`
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- [x] 倒计时 ---`count.vue`
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- [x] 常用软件下载 ---`download.vue`
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [ ] 知乎文章备份
+
+# 引入的第三方库
+
+- Antd
+- axios
+- qs
+
+

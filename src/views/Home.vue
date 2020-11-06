@@ -70,6 +70,13 @@ export default {
           title: "文章备份",
           description: "知乎文章备份",
         },
+        {
+          key: 5,
+          path: "/waterline",
+          img: require("@/assets/homeicon/faucet.png"),
+          title: "水管开关",
+          description: "水管路线开关图"
+        }
       ],
     };
   },

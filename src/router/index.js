@@ -31,6 +31,11 @@ Vue.use(VueRouter)
     name: 'zhihu',
     component: () => import('../views/zhihu.vue')
   },
+  {
+    path: '/waterline',
+    name: 'waterline',
+    component: () => import('../views/waterline.vue')
+  },
 
 ]
 

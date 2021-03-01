@@ -1,10 +1,10 @@
 <template>
-  <a-list bordered :data-source="listdata.data">
+  <a-list bordered :data-source="listdata.data" style="background-color:white;">
     <a-list-item slot="renderItem" slot-scope="item">
+      <a-icon class="listitemaction-icon" v-if="item.os == 'windows'" type="windows" />
+      <a-icon class="listitemaction-icon" v-if="item.os == 'android'" type="android" />
       {{item.name}}
       <div class="listitemaction">
-          <a-icon class="listitemaction-icon" v-if="item.os == 'windows'" type="windows" />
-          <a-icon class="listitemaction-icon" v-if="item.os == 'android'" type="android" />
         <a :href="preurl+item.url" target="_blank" :download="item.name">
             <a-button shape="round" icon="download" size="small" type="primary">下载</a-button>
             </a>
@@ -36,6 +36,6 @@ export default {
 }
 
 .listitemaction-icon{
-    margin: 0 10px;
+  margin-right: 10px;
 }
 </style>

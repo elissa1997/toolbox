@@ -1,79 +1,95 @@
 <template>
   <div>
     <a-row>
-      <a-col :xs="{span:22 ,offset:1}" :lg="{span:14 ,offset:5}">
-        <tooltitle :titletext="'服务器监控'"></tooltitle>
-        <a-card class="card" title="服务器概览">
-          <a-descriptions
-            bordered
-            :column="{ xxl: 2, xl: 2, lg: 2, md: 2, sm: 1, xs: 1 }"
-            size="small"
-          >
-            <a-descriptions-item label="机房地址">{{v2info.node_datacenter}}</a-descriptions-item>
-            <a-descriptions-item label="操作系统">{{v2info.os}}</a-descriptions-item>
-            <a-descriptions-item label="虚拟化">{{v2info.vm_type}}</a-descriptions-item>
-            <a-descriptions-item label="线路信息">上海-美西(163)</a-descriptions-item>
-            <a-descriptions-item label="带宽用量">
-              <span>{{datausetoSize}}GB/{{monthly_datatoSize}}GB</span>
-              <a-progress :percent="bandpercent" status="active" />
-            </a-descriptions-item>
-          </a-descriptions>
-        </a-card>
+      <a-col :xs="{ span: 22, offset: 1 }" :lg="{ span: 14, offset: 5 }">
+        <div class="glasscontent">
+          <tooltitle :titletext="'服务器监控'"></tooltitle>
+          <a-card class="card" title="服务器概览">
+            <a-descriptions
+              bordered
+              :column="{ xxl: 2, xl: 2, lg: 2, md: 2, sm: 1, xs: 1 }"
+              size="small"
+            >
+              <a-descriptions-item label="机房地址">{{
+                v2info.node_datacenter
+              }}</a-descriptions-item>
+              <a-descriptions-item label="操作系统">{{
+                v2info.os
+              }}</a-descriptions-item>
+              <a-descriptions-item label="虚拟化">{{
+                v2info.vm_type
+              }}</a-descriptions-item>
+              <a-descriptions-item label="线路信息"
+                >上海-美西(163)</a-descriptions-item
+              >
+              <a-descriptions-item label="带宽用量">
+                <span>{{ datausetoSize }}GB/{{ monthly_datatoSize }}GB</span>
+                <a-progress :percent="bandpercent" status="active" />
+              </a-descriptions-item>
+            </a-descriptions>
+          </a-card>
 
-        <a-card class="card" title="V2ray服务状态">
-          <p>
-            <a-tag>服务名称</a-tag>
-            {{v2ray[0]}}
-          </p>
-          <p>
-            <a-tag>运行状态</a-tag>
-            <a-badge v-if="v2ray[1] == 'active (running)'" status="processing" />
-            <a-badge v-else status="error" text="Error" />
-            {{v2ray[1]}}
-          </p>
-          <p>
-            <a-tag>主进程号</a-tag>
-            {{v2ray[2]}}
-          </p>
-          <p>
-            <a-tag>运行时长</a-tag>
-            {{v2ray[3]}}
-          </p>
-        </a-card>
+          <a-card class="card" title="V2ray服务状态">
+            <p>
+              <a-tag>服务名称</a-tag>
+              {{ v2ray[0] }}
+            </p>
+            <p>
+              <a-tag>运行状态</a-tag>
+              <a-badge
+                v-if="v2ray[1] == 'active (running)'"
+                status="processing"
+              />
+              <a-badge v-else status="error" text="Error" />
+              {{ v2ray[1] }}
+            </p>
+            <p>
+              <a-tag>主进程号</a-tag>
+              {{ v2ray[2] }}
+            </p>
+            <p>
+              <a-tag>运行时长</a-tag>
+              {{ v2ray[3] }}
+            </p>
+          </a-card>
 
-        <a-card class="card" title="KMS服务状态">
-          <p>
-            <a-tag>服务名称</a-tag>
-            {{kms[0]}}
-          </p>
-          <p>
-            <a-tag>运行状态</a-tag>
-            <a-badge v-if="kms[1] == 'active (running)'" status="processing" />
-            <a-badge v-else status="error" text="Error" />
-            {{kms[1]}}
-          </p>
-          <p>
-            <a-tag>主进程号</a-tag>
-            {{kms[2]}}
-          </p>
-          <p>
-            <a-tag>运行时长</a-tag>
-            {{kms[3]}}
-          </p>
-        </a-card>
+          <a-card class="card" title="KMS服务状态">
+            <p>
+              <a-tag>服务名称</a-tag>
+              {{ kms[0] }}
+            </p>
+            <p>
+              <a-tag>运行状态</a-tag>
+              <a-badge
+                v-if="kms[1] == 'active (running)'"
+                status="processing"
+              />
+              <a-badge v-else status="error" text="Error" />
+              {{ kms[1] }}
+            </p>
+            <p>
+              <a-tag>主进程号</a-tag>
+              {{ kms[2] }}
+            </p>
+            <p>
+              <a-tag>运行时长</a-tag>
+              {{ kms[3] }}
+            </p>
+          </a-card>
+        </div>
       </a-col>
     </a-row>
   </div>
 </template>
 
 <script>
-import tooltitle from "@/components/tooltitle"
+import tooltitle from "@/components/tooltitle";
 import { getv2info, getkmsstatus, getv2raystatus } from "@/network/server";
 
 export default {
   name: "server",
   components: {
-    tooltitle
+    tooltitle,
   },
   data() {
     return {

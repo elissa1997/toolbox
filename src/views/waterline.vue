@@ -1,6 +1,7 @@
 <template>
   <a-row>
     <a-col :xs="{span:22 ,offset:1}" :lg="{span:14 ,offset:5}">
+      <div class="glasscontent">
       <tooltitle :titletext="'水管开关'"></tooltitle>
       <img :src="imgsrc" class="img"/>
       <div style="text-align: center;margin-bottom: 20px;">
@@ -12,6 +13,7 @@
         </a-button-group>
       </div>
       <waterlinetable></waterlinetable>
+      </div>
     </a-col>
   </a-row>
 </template>

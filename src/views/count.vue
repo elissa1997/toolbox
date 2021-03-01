@@ -1,11 +1,16 @@
 <template>
   <a-row>
-    <a-col :xs="{span:22 ,offset:1}" :lg="{span:14 ,offset:5}">
-      <tooltitle :titletext="'倒计时'"></tooltitle>
-      <a-card>
-      <a-statistic-countdown title="距离考研" :value="deadline" format="D 天 H 时 m 分 s:SSS 秒" />
-
-      </a-card>
+    <a-col :xs="{ span: 22, offset: 1 }" :lg="{ span: 14, offset: 5 }">
+      <div class="glasscontent">
+        <tooltitle :titletext="'倒计时'"></tooltitle>
+        <a-card>
+          <a-statistic-countdown
+            title="距离过年"
+            :value="deadline"
+            format="D 天 H 时 m 分 s:SSS 秒"
+          />
+        </a-card>
+      </div>
     </a-col>
   </a-row>
 </template>
@@ -20,7 +25,7 @@ export default {
   },
   data() {
     return {
-        deadline: new Date(2020,11,19).getTime()
+      deadline: new Date(2021, 1, 12).getTime(),
     };
   },
 };

@@ -11,7 +11,7 @@
                 <a-modal v-model="visible" title="扫一扫添加好友" :footer="null">
                   <div style="text-align: center">
 
-                  <img src="@/assets/wechatqr.png" style="width: 200px;">
+                  <img src="@/assets/footicon/wechatqr.png" style="width: 200px;">
                   </div>
                 </a-modal>
                 <p>
@@ -38,8 +38,8 @@
             <div class="footitem">
               <p class="footitem-title">技术支持</p>
               <div class="footitem-content">
-                <p><img src="@/assets/ant.svg" style="width:14px; margin-right: 5px;">Ant Design组件库</p>
-                <p><img src="@/assets/logo.png" style="width:14px; margin-right: 5px;">VUE框架</p>
+                <p><img src="@/assets/footicon/ant.svg" style="width:14px; margin-right: 5px;">Ant Design组件库</p>
+                <p><img src="@/assets/footicon/vue.png" style="width:14px; margin-right: 5px;">VUE框架</p>
               </div>
             </div>
           </a-col>

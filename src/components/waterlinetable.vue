@@ -1,5 +1,5 @@
 <template>
-  <a-table :columns="columns" :data-source="data" bordered :pagination="false" size="middle">
+  <a-table :columns="columns" :data-source="data" bordered :pagination="false" size="middle" style="background-color:white;">
     <span slot="valve1" slot-scope="text, record">
       <a-tag style="margin: 0;" v-if="record.valve1 == '开'" color="#87d068">开</a-tag>
       <a-tag style="margin: 0;" v-if="record.valve1 == '关'" color="#f50">关</a-tag>

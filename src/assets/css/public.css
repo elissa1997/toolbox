@@ -1,0 +1,57 @@
+/* from https://glassmorphism.com/ */
+.font_l1, .font_l2, .font_l3, .font_l4{
+  margin: 0.4rem 0.8rem;
+}
+
+.font_l1 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #fafafa;
+}
+
+.font_l2 {
+  font-size: 16px;
+  line-height: 22px;
+  color: #f5f5f5;
+}
+
+.font_l3 {
+  font-size: 16px;
+  line-height: 22px;
+  color: #f0f0f0;
+}
+
+.font_l4 {
+  font-size: 14px;
+  line-height: 20px;
+  color: #d9d9d9;
+}
+
+.glasscard{
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(83, 83, 83, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 6px;
+    /* margin: 5px;
+    padding: 10px; */
+  }
+
+.glasscontent{
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 32px 0 rgba(83, 83, 83, 0.37);
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 6px;
+  padding: 30px 10vw;
+}
+
+@media (max-width:990px) {
+  .glasscontent{
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 8px 32px 0 rgba(83, 83, 83, 0.37);
+    border-radius: 6px;
+    padding: 30px 10px;
+  }
+}
